@@ -1,13 +1,14 @@
 <template>
- <MovieList
- :movies="movies"
- />
+  <TheHeader title="List of movies" />
+  <MovieList :movies="movies" />
 </template>
 
 <script>
-import MovieList from '@/components/MovieList.vue';
+import TheHeader from '@/components/layouts/TheHeader.vue';
+import MovieList from '@/components/movies/MovieList.vue';
 export default {
   components: {
+    TheHeader,
     MovieList,
   },
   data() {
@@ -31,11 +32,9 @@ export default {
     };
   },
 };
-
 </script>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
@@ -49,5 +48,4 @@ html {
 body {
   margin: 0;
 }
-
 </style>
