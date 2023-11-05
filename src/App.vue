@@ -1,20 +1,14 @@
 <template>
-  <ul>
-    <MovieCard
-      v-for="movie in movies"
-      :key="movie.id"
-      :title="movie.title"
-      :description="movie.description"
-      :link="movie.link"
-    />
-  </ul>
+ <MovieList
+ :movies="movies"
+ />
 </template>
 
 <script>
-import MovieCard from '@/components/MovieCard.vue';
+import MovieList from '@/components/MovieList.vue';
 export default {
   components: {
-    MovieCard,
+    MovieList,
   },
   data() {
     return {
@@ -40,3 +34,20 @@ export default {
 
 </script>
 
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+</style>
