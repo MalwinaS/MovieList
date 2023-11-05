@@ -3,10 +3,10 @@
     <base-card>
       <div>
         <header>
-          <h3>Title {{ title }}</h3>
+          <h3>{{ title }}</h3>
           <base-button>Delete</base-button>
         </header>
-        <p>Description {{ description }}</p>
+        <p>{{ description }}</p>
         <nav>
           <a :href="link">Link</a>
         </nav>
