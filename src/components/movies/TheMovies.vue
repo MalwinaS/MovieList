@@ -9,7 +9,9 @@
       >Add new movie</base-button
     >
   </base-card>
+  <keep-alive>
   <component :is="currentComponent"></component>
+</keep-alive>
 </template>
 
 <script>
@@ -50,9 +52,22 @@ export default {
       return this.currentComponent === 'new-movie' ? null : 'flat';
     },
   },
+  methods: {
+    addMovie(title, description, link) {
+      const newMovie = {
+        id: new Date().toISOString(),
+        title: title,
+        description: description,
+        link: link
+      };
+      this.movies.unshift(newMovie)
+      this.currentComponent = 'movie-list'
+    }
+  },
   provide() {
     return {
       movies: this.movies,
+      addMovie: this.addMovie
     };
   },
 };

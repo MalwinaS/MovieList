@@ -30,16 +30,13 @@
 
 <script>
 export default {
-  data() {
-    return {
-      enteredTitle: '',
-      enteredDescription: '',
-      enteredLink: '',
-    };
-  },
+  inject: ['addMovie'],
   methods: {
     submitData() {
-
+      const enteredTitle = this.$refs.titleInput.value;
+      const enteredDesc = this.$refs.descInput.value;
+      const enteredLink = this.$refs.linkInput.value;
+      this.addMovie(enteredTitle, enteredDesc, enteredLink)
     },
   },
 };
