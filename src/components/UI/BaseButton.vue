@@ -19,6 +19,7 @@ button {
   border: 1px solid brown;
   color: white;
   cursor: pointer;
+  margin-right: 10px;
 }
 button:hover,
 .button:active {

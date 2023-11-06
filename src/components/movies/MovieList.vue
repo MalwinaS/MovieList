@@ -16,7 +16,7 @@ export default {
   components: {
     MovieCard,
   },
-  props: ['movies'],
+  inject: ["movies"],
 };
 </script>
 
