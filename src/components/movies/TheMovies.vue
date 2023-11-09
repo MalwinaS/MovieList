@@ -62,12 +62,17 @@ export default {
       };
       this.movies.unshift(newMovie)
       this.currentComponent = 'movie-list'
+    },
+    deleteMovie(id) {
+      const resIndex = this.movies.findIndex((res) => res.id === id);
+      this.movies.splice(resIndex, 1);
     }
   },
   provide() {
     return {
       movies: this.movies,
-      addMovie: this.addMovie
+      addMovie: this.addMovie,
+      deleteMovie: this.deleteMovie
     };
   },
 };
