@@ -4,7 +4,7 @@
       <div>
         <header>
           <h3>{{ title }}</h3>
-          <base-button>Delete</base-button>
+          <base-button @click="deleteMovie(id)">Delete</base-button>
         </header>
         <p>{{ description }}</p>
         <nav>
@@ -35,6 +35,7 @@ export default {
       required: true,
     },
   },
+    inject: ["deleteMovie"],
 };
 </script>
 
